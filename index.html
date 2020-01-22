@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Current Weather</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/data.js"></script>
+<span class="drag"></span>
+<div class="wrapper">
+    <h1><span class="temp"></span><span class="degree">&deg;</span></h1>
+    <h2 class="description"></h2>
+    <h2 class="location"></h2>
+</div>
+<span class="tab"></span>
+<div class="settings">
+    <div class="inner"><h2>Built</h2>
+        <div class="builtwith">
+            <p class="label">with</p>
+            <div class="img-wrapper">
+                <img src="img/logo-node.svg" alt="Node.js" title="Node.js">
+                <img src="img/logo-electron.svg" alt="Electron" title="Electron">
+            </div>
+        </div>
+        <div class="builtin">
+            <p class="label">in</p>
+            <img src="img/california-flag.svg" alt="California Republic" title="California">
+        </div>
+        <div class="builtby">
+            <p class="label">by</p>
+            <a href="https://github.com/GDKeller" target="_blank" rel="noopener">Grant Keller</a>
+        </div>
+    </div>
+
+</div>
+
+<script src="js/ui.js"></script>
+<!--We are using node <script>document.write(process.versions.node)</script>,-->
+<!--Chrome <script>document.write(process.versions.chrome)</script>,-->
+<!--and Electron <script>document.write(process.versions.electron)</script>.-->
+</body>
+</html>

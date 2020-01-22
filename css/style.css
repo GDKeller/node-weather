@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css?family=Cutive+Mono|Dosis&display=swap");
+html {
+  height: 100%;
+  background: #6190E8;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(45deg, #364f6b, #43dde6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(45deg, #364f6b, #43dde6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100%;
+  color: #f0f0f0;
+  text-align: center;
+  font-family: "Cutive Mono", monospace;
+  font-size: 28px;
+  -webkit-user-select: none;
+}
+body div {
+  box-sizing: border-box;
+}
+body .drag {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 10px;
+  -webkit-app-region: drag;
+}
+body .wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-shadow: #364f6b -0.6em 0.08em 0.2em;
+}
+body h1, body h2 {
+  line-height: 1;
+}
+body h1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 6em;
+  color: #fc5185;
+  font-family: "Dosis", sans-serif;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+body h1 .degree {
+  position: absolute;
+  top: 0;
+  right: -0.25em;
+  font-size: 0.5em;
+}
+body .description {
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: auto;
+}
+body .location {
+  font-size: 0.8em;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+body .tab {
+  position: absolute;
+  bottom: 2%;
+  right: 0;
+  width: 0.8em;
+  height: 0.8em;
+  background: #f0f0f0;
+  border-radius: 50% 0 0 50%;
+  box-shadow: #364f6b 0 0.04em 0.2em -0.05em;
+  z-index: 10;
+}
+body .tab:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 30%;
+  height: 30%;
+  background-color: #fc5185;
+  border-radius: 50%;
+  transition: width 150ms, height 150ms;
+}
+body .tab:hover:after {
+  width: 50%;
+  height: 50%;
+}
+body .settings {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateX(100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  background-color: #f0f0f0;
+  color: #364f6b;
+  border-left: 0.2em solid #fc5185;
+  transition: transform 300ms;
+}
+body .settings.open {
+  transform: translateX(0);
+}
+body .settings .inner {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  height: 100%;
+  max-height: 280px;
+}
+body .settings p {
+  font-size: 0.5em;
+}
+body .settings a {
+  position: relative;
+  display: inline-block;
+  color: #364f6b;
+  text-decoration: none;
+  padding-bottom: 0.02em;
+}
+body .settings a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: #fc5185;
+}
+body .settings h2 {
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: auto;
+}
+body .settings .label {
+  font-size: 1em;
+  width: 40%;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: auto;
+  line-height: 1;
+}
+body .settings .builtwith {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0;
+  margin-bottom: auto;
+}
+body .settings .builtwith .img-wrapper {
+  display: flex;
+  align-self: flex-end;
+  justify-content: flex-start;
+  width: 60%;
+}
+body .settings .builtwith .img-wrapper img {
+  margin-right: 5%;
+  max-width: 30%;
+}
+body .settings .builtin {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: auto;
+}
+body .settings .builtin img {
+  align-self: flex-end;
+  object-fit: contain;
+  width: 40%;
+  max-width: 100px;
+  margin-left: 0;
+  margin-right: auto;
+}
+body .settings .builtby {
+  display: flex;
+}
+body .settings .builtby a {
+  align-self: flex-end;
+  font-size: 0.5em;
+}
+
+/*# sourceMappingURL=style.css.map */
