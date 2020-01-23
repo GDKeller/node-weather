@@ -33,6 +33,27 @@ body .drag {
   height: 10px;
   -webkit-app-region: drag;
 }
+body #close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+body #close-btn:hover {
+  cursor: pointer;
+}
+body #close-btn .close {
+  font-size: 1em;
+  color: #364f6b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1em;
+  height: 1em;
+}
 body .wrapper {
   box-sizing: border-box;
   display: flex;
