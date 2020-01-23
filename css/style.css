@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Cutive+Mono|Dosis&display=swap");
+input:focus {
+  outline: 0;
+}
+
 html {
   height: 100%;
   background: #6190E8;
@@ -90,9 +94,59 @@ body .description {
   margin-bottom: auto;
 }
 body .location {
+  position: relative;
   font-size: 0.8em;
   margin-top: auto;
   margin-bottom: 0;
+}
+body .location h2 {
+  margin: 0;
+  font-size: 1em;
+  transition: transform 500ms ease-in-out;
+}
+body .location h2.hidden {
+  transform: rotateX(90deg);
+  transition: transform 500ms ease-in-out;
+}
+body .location form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0) rotateX(-90deg);
+  max-width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 1000ms ease-in-out;
+}
+body .location form.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate3d(-50%, -50%, 0) rotateX(0deg);
+  transition: transform 500ms ease-in-out;
+}
+body .location form.show input[type=submit] {
+  transform: translateY(-50%) scale(1);
+  transition: transform 300ms ease-in;
+}
+body .location form input[type=text] {
+  max-width: 100%;
+  font-size: 1em;
+  border-radius: 1.5em 1.5em;
+  line-height: 1.2;
+  border: 0;
+  text-align: center;
+}
+body .location form input[type=submit] {
+  position: absolute;
+  top: 50%;
+  right: -1.7em;
+  transform: translateY(-50%) scale(0.5);
+  font-size: 1em;
+  border-radius: 1.5em 1.5em;
+  border: 0;
+  background-color: #fc5185;
+  color: #364f6b;
+  transition: transform 300ms ease-in;
 }
 body .tab {
   position: absolute;

@@ -16,25 +16,35 @@
 <div class="wrapper">
     <h1><span class="temp"></span><span class="degree">&deg;</span></h1>
     <h2 class="description"></h2>
-    <h2 class="location"></h2>
+    <div class="location">
+        <h2 id="location" class="show"></h2>
+        <form id="location-form">
+            <input type="text" id="user-location" placeholder="Location">
+            <input id="submit" type="submit" value="&#x2714;">
+        </form>
+    </div>
+
 </div>
 <span class="tab"></span>
 <div class="settings">
-    <div class="inner"><h2>Built</h2>
-        <div class="builtwith">
-            <p class="label">with</p>
-            <div class="img-wrapper">
-                <img src="img/logo-node.svg" alt="Node.js" title="Node.js">
-                <img src="img/logo-electron.svg" alt="Electron" title="Electron">
+    <div class="inner">
+        <div class="credit">
+            <h2>Built</h2>
+            <div class="builtwith">
+                <p class="label">with</p>
+                <div class="img-wrapper">
+                    <img src="img/logo-node.svg" alt="Node.js" title="Node.js">
+                    <img src="img/logo-electron.svg" alt="Electron" title="Electron">
+                </div>
             </div>
-        </div>
-        <div class="builtin">
-            <p class="label">in</p>
-            <img src="img/california-flag.svg" alt="California Republic" title="California">
-        </div>
-        <div class="builtby">
-            <p class="label">by</p>
-            <a href="https://github.com/GDKeller" target="_blank" rel="noopener">Grant Keller</a>
+            <div class="builtin">
+                <p class="label">in</p>
+                <img src="img/california-flag.svg" alt="California Republic" title="California">
+            </div>
+            <div class="builtby">
+                <p class="label">by</p>
+                <a href="https://github.com/GDKeller" target="_blank" rel="noopener">Grant Keller</a>
+            </div>
         </div>
     </div>
 

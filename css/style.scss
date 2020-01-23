@@ -5,6 +5,9 @@ $white: #f0f0f0;
 $blue-dark: #364f6b;
 $blue-light: #43dde6;
 
+input:focus {
+ outline: 0;
+}
 
 html {
  height: 100%;
@@ -97,9 +100,59 @@ body {
   margin-bottom: auto;
  }
  .location {
+  position: relative;
   font-size: .8em;
   margin-top: auto;
   margin-bottom: 0;
+  h2 {
+   margin: 0;
+   font-size: 1em;
+   transition: transform 500ms ease-in-out;
+   &.hidden {
+    transform: rotateX(90deg);
+    transition: transform 500ms ease-in-out;
+   }
+  }
+  form {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate3d(-50%, -50%, 0) rotateX(-90deg);
+   max-width: 100%;
+   opacity: 0;
+   pointer-events: none;
+   transition: transform 1000ms ease-in-out;
+   &.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate3d(-50%, -50%, 0) rotateX(0deg);
+    transition: transform 500ms ease-in-out;
+    input[type="submit"] {
+     transform: translateY(-50%) scale(1);
+     transition: transform 300ms ease-in;
+    }
+   }
+   input[type="text"] {
+    max-width: 100%;
+    font-size: 1em;
+    border-radius: 1.5em 1.5em;
+    line-height: 1.2;
+    border: 0;
+    text-align: center;
+   }
+   input[type="submit"] {
+    position: absolute;
+    top: 50%;
+    right: -1.7em;
+    transform: translateY(-50%) scale(.5);
+    font-size: 1em;
+    border-radius: 1.5em 1.5em;
+    border: 0;
+    background-color: $pink;
+    color: $blue-dark;
+    transition: transform 300ms ease-in;
+   }
+  }
  }
 
  .tab {
@@ -154,6 +207,8 @@ body {
    max-width: 300px;
    height: 100%;
    max-height: 280px;
+  }
+  .credit {
   }
   p {
    font-size: .5em;
