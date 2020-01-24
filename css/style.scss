@@ -99,6 +99,31 @@ body {
   margin-top: 0;
   margin-bottom: auto;
  }
+  #location-display {
+    transition: transform 300ms ease-in-out;
+    .location {
+    }
+    form {
+      opacity: 0;
+      transition: opacity 100ms 100ms;
+      pointer-events: none;
+    }
+    &.flipped {
+      transform: rotateX(180deg);
+      transition: transform 300ms ease-in-out;
+      .location {
+      }
+      form {
+        opacity: 1;
+        pointer-events: auto ;
+        transition: opacity 200ms 100ms;
+        input[type="submit"] {
+          transform: translateY(-50%) scale(1);
+          transition: transform 200ms ease-in;
+        }
+      }
+    }
+  }
  .location {
   position: relative;
   font-size: .8em;
@@ -117,21 +142,8 @@ body {
    position: absolute;
    top: 50%;
    left: 50%;
-   transform: translate3d(-50%, -50%, 0) rotateX(-90deg);
+   transform: translate3d(-50%, -50%, 0) rotateX(180deg);
    max-width: 100%;
-   opacity: 0;
-   pointer-events: none;
-   transition: transform 1000ms ease-in-out;
-   &.show {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate3d(-50%, -50%, 0) rotateX(0deg);
-    transition: transform 500ms ease-in-out;
-    input[type="submit"] {
-     transform: translateY(-50%) scale(1);
-     transition: transform 300ms ease-in;
-    }
-   }
    input[type="text"] {
     max-width: 100%;
     font-size: 1em;

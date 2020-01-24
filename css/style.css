@@ -93,6 +93,27 @@ body .description {
   margin-top: 0;
   margin-bottom: auto;
 }
+body #location-display {
+  transition: transform 300ms ease-in-out;
+}
+body #location-display form {
+  opacity: 0;
+  transition: opacity 100ms 100ms;
+  pointer-events: none;
+}
+body #location-display.flipped {
+  transform: rotateX(180deg);
+  transition: transform 300ms ease-in-out;
+}
+body #location-display.flipped form {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 200ms 100ms;
+}
+body #location-display.flipped form input[type=submit] {
+  transform: translateY(-50%) scale(1);
+  transition: transform 200ms ease-in;
+}
 body .location {
   position: relative;
   font-size: 0.8em;
@@ -112,21 +133,8 @@ body .location form {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate3d(-50%, -50%, 0) rotateX(-90deg);
+  transform: translate3d(-50%, -50%, 0) rotateX(180deg);
   max-width: 100%;
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 1000ms ease-in-out;
-}
-body .location form.show {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translate3d(-50%, -50%, 0) rotateX(0deg);
-  transition: transform 500ms ease-in-out;
-}
-body .location form.show input[type=submit] {
-  transform: translateY(-50%) scale(1);
-  transition: transform 300ms ease-in;
 }
 body .location form input[type=text] {
   max-width: 100%;
