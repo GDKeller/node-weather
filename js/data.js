@@ -13,15 +13,15 @@ var dataLocation = '';
 const {ipcRenderer} = require('electron')
 // receive message from index.html
 ipcRenderer.on('asynchronous-reply', (event, arg) => {
-    city = arg;
-    currentWeather = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-    fetchData();
+        city = arg;
+        currentWeather = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+        fetchData();
 });
 
 fetchData()
 window.setInterval(function() {
     fetchData()
-}, 5000);
+}, 60000);
 function fetchData() {
     request(currentWeather, function (err, response, body) {
         if(err){

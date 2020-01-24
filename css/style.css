@@ -85,7 +85,7 @@ body h1 {
 body h1 .degree {
   position: absolute;
   top: 0;
-  right: -0.25em;
+  right: -0.35em;
   font-size: 0.5em;
 }
 body .description {

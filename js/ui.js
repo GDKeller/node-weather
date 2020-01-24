@@ -21,14 +21,15 @@ document.querySelector('#submit').addEventListener('click', function(event) {
     let location = document.getElementById("user-location").value;
     const {ipcRenderer} = require('electron')
 
-    // send location to main.js
-    ipcRenderer.send('asynchronous-message', location )
+    if ( location !== '' ) {
+        // send location to main.js
+        ipcRenderer.send('asynchronous-message', location)
 
-    // receive message from main.js
-    ipcRenderer.on('asynchronous-reply', (event, arg) => {
-        // console.log(arg)
-
-    })
+        // receive message from main.js
+        ipcRenderer.on('asynchronous-reply', (event, arg) => {
+            // console.log(arg)
+        });
+    }
 
     document.getElementById('location-form').classList.remove('show');
     document.getElementById('location').classList.remove('hidden');
