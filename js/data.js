@@ -8,31 +8,31 @@ var dataTemp = '';
 var dataLocation = '';
 
 
-
-
-const {ipcRenderer} = require('electron')
+const {ipcRenderer} = require('electron');
 // receive message from index.html
 ipcRenderer.on('asynchronous-reply', (event, arg) => {
-        city = arg;
-        currentWeather = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-        fetchData();
+    city = arg;
+    currentWeather = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    fetchData();
 });
 
-fetchData()
-window.setInterval(function() {
+fetchData();
+window.setInterval(function () {
     fetchData()
 }, 60000);
+
 function fetchData() {
     request(currentWeather, function (err, response, body) {
-        if(err){
+        if (err) {
             console.log('error:', error);
         } else {
             let weather = JSON.parse(body);
-            // console.log(weather);
-            dataDesc = weather.weather["0"].main;
-            dataTemp = Math.round(weather.main.temp);
-            dataLocation = weather.name;
-            renderData();
+            if( weather.cod === 200 ) {
+                dataDesc = weather.weather["0"].main;
+                dataTemp = Math.round(weather.main.temp);
+                dataLocation = weather.name;
+                renderData();
+            }
         }
     });
 }
